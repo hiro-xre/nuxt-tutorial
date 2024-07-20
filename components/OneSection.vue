@@ -1,17 +1,8 @@
 <script setup lang="ts">
-interface Props {
-  id: number;
-  name: string;
-  email: string;
-  points: number;
-  note?: string;
-}
-
 interface Emits {
   (event: "update:points", points: number): void;
 }
 
-const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
 
 const localNote = computed(
