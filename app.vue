@@ -13,7 +13,36 @@ useState<Map<number, Member>>(
 </script>
 
 <template>
-  <div>
-    <TheBaseSection />
-  </div>
+  <header>
+    <h1>ルーティングサンプル</h1>
+  </header>
+  <main>
+    <NuxtPage />
+  </main>
 </template>
+
+<style>
+main {
+  border: blue 1px solid;
+  padding: 10px;
+}
+#breadcrumbs ul li {
+  display: flex;
+  list-style-type: none;
+}
+#breadcrumbs {
+  margin-left: 0;
+}
+#breadcrumbs ul {
+  padding: 0;
+}
+#breadcrumbs ul .current {
+  color: red;
+}
+#breadcrumbs ul li:before {
+  content: " > ";
+}
+#breadcrumbs ul li:first-child:before {
+  content: none;
+}
+</style>
