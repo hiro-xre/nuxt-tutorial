@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import type { Member } from '@/interface';
+
+const SITE_TITLE = "ヘッダ変更サンプル";
+useHead({
+  titleTemplate: (titleChunk: string|undefined): string => {
+    let title = SITE_TITLE;
+    if(titleChunk != undefined) {
+      title = `${titleChunk} | ${SITE_TITLE}`;
+    }
+    return title;
+  }
+})
+
 useState<Map<number, Member>>(
   "memberList",
   (): Map<number, Member> => {
